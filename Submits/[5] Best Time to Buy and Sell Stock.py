@@ -8,3 +8,8 @@ class Solution:
                 l = r
             res = max(res, prices[r] - prices[l])
         return res
+
+    '''
+    Time Complexity - O(n)
+    Space Complexity - O(1)
+    '''
