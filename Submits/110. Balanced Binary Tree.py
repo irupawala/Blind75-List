@@ -23,6 +23,6 @@ class Solution:
         
 '''
 Time Complexity - O(logn)
-Space Complexity - O(Height)
+Space Complexity - O(1)
 
 '''
