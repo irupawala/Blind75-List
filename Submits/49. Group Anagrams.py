@@ -4,9 +4,7 @@ class Solution:
         ans = {}
         
         for i in strs:
-            list_string = list(i)
-            list_string.sort()
-            dict_key = "".join(map(str, list_string))
+            dict_key = "".join(map(str, sorted(i)))
             if dict_key not in ans: ans[dict_key] = [i]
             else: ans[dict_key].append(i)
                 
