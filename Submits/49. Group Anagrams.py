@@ -1,16 +1,20 @@
+from heapq import *
+
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
-        if len(strs) == 1: return [strs] 
-        ans = {}
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        set_nums = set(nums)
+        ans = []
+        heap = []
         
-        for i in strs:
-            dict_key = "".join(map(str, sorted(i)))
-            if dict_key not in ans: ans[dict_key] = [i]
-            else: ans[dict_key].append(i)
-                
-        return ans.values()
-    
+        for num in set_nums: 
+            heappush(heap, [-nums.count(num), num])
+            
+        for i in range(k):
+            ans.append(heappop(heap)[1])
+            
+        return ans
+        
 '''
-Time Complexity - O(len(n) * mlogm)
-Space Complexity - O(len(n))
+Time Complexity - O(unique_nums*log(unique_nums) + O(k*unique_nums)
+Space Complexity - O(unique_nums)
 '''
