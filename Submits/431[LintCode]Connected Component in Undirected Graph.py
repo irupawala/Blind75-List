@@ -24,9 +24,6 @@ class Solution:
         visited = {i.label:False for i in nodes}
 
         def dfs(i, connected_list):
-  
-            if i.label in connected_list:
-                return connected_list
 
             visited[i.label] = True
             connected_list.append(i.label)
