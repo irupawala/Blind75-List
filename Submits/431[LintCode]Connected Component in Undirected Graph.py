@@ -32,7 +32,7 @@ class Solution:
                 if not visited[j.label]:
                     dfs(j, connected_list)
 
-            i.neighbors = []
+            i.neighbors = [] # This line is super-critical to reduce time Complexity
             return connected_list
 
         for i in nodes:
